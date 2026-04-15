@@ -262,6 +262,15 @@ function App() {
             }}
           />
           <select 
+            className="bg-[#1f2130] border-[#ffffff10] rounded-lg px-3 py-2 text-sm text-gray-300 h-full border-l-2 focus:outline-none transition-colors"
+            style={{ borderLeftColor: newTask.priority === 'high' ? '#ef4444' : newTask.priority === 'medium' ? '#eab308' : '#22c55e' }}
+            value={newTask.priority} onChange={e => setNewTask({...newTask, priority: e.target.value})}
+          >
+            <option value="low">Low Priority</option>
+            <option value="medium">Medium Priority</option>
+            <option value="high">High Priority</option>
+          </select>
+          <select 
             className="bg-[#1f2130] border-[#ffffff10] rounded-lg px-3 py-2 text-sm text-gray-300 h-full"
             value={newTask.status} onChange={e => setNewTask({...newTask, status: e.target.value})}
           >
