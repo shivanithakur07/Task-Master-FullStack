@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0f111a;
+  --bg-secondary: #161824;
+  --bg-tertiary: #1f2130;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  
+  --neon-cyan: #00f0ff;
+  --neon-purple: #b05bff;
+  --neon-yellow: #ffde00;
+  --neon-green: #00ff66;
+  --neon-red: #ff3c3c;
+  
+  --border-color: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for sleek UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary); 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-purple); 
+}
+
+/* Base Kanban Board and Glassmorphism */
+.glass-panel {
+  background: rgba(22, 24, 36, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+}
+
+/* Glow effects matching the reference image */
+.glow-cyan {
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2), inset 0 0 5px rgba(0, 240, 255, 0.1);
+}
+
+.glow-purple {
+  border: 1px solid var(--neon-purple);
+  box-shadow: 0 0 10px rgba(176, 91, 255, 0.2), inset 0 0 5px rgba(176, 91, 255, 0.1);
+}
+
+.glow-yellow {
+  border: 1px solid var(--neon-yellow);
+  box-shadow: 0 0 10px rgba(255, 222, 0, 0.2), inset 0 0 5px rgba(255, 222, 0, 0.1);
+}
+
+.glow-green {
+  border: 1px solid var(--neon-green);
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.2), inset 0 0 5px rgba(0, 255, 102, 0.1);
+}
+
+/* Form Elements */
+input, textarea, select {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+/* Button hover animations */
+.btn-neon {
+  background: linear-gradient(135deg, rgba(0,240,255,0.1), rgba(176,91,255,0.1));
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0,240,255,0.4);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease forwards;
+}
+
+/* Smooth drag over transitions */
+.drag-over {
+  background: rgba(255, 255, 255, 0.05);
+}
